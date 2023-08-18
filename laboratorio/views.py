@@ -1,4 +1,11 @@
 from django.shortcuts import render
+from .import views
 
 def v_index(request):
-    return render ( request, 'v_index.html' )
+
+    context = {
+
+    }
+    return render ( request, 'v_index.html', context )
+
+

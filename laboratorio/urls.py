@@ -1,7 +1,7 @@
 from django.urls import path
-from laboratorio import views
+
+from .views import v_index
 
 urlpatterns = [
-    path('', v_index.site.urls)
-    
+    path('', v_index, name="index")
 ]

@@ -10,6 +10,8 @@ class DirectorAdmin(admin.ModelAdmin):
 class ProductoAdmin(admin.ModelAdmin):
     list_display = ('id','nombre', 'laboratorio', 'get_fabricacion_year',
                 'p_costo', 'p_venta')
+    ordering = ("nombre","laboratorio")
+    list_display_links = ('nombre','laboratorio')
     list_filter = ('laboratorio','nombre')
     search_fields = ('nombre', 'laboratorio__nombre')
     
