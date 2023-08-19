@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <h1>Informacion de Laboratorios</h1>
+
 <table class="table">
     <thead>
         <tr>
@@ -12,23 +14,22 @@
         </tr>
     </thead>
     <tbody>
+        {% for labs in laborat %}
         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">{{labs.nombre}}</th>
+            <td>{{labs.ciudad}}</td>
+            <td>{{labs.pais}}</td>
+            <td><a href="#">Actualizar</a></td>
+            <td><a href="#">Eliminar</a></td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
+    
+        {% endfor %}
+        
     </tbody>
 </table>
+
+    <div>
+        <H2>¿Informacion de los Laboratorios?</H2>
+    </div>
+    <a href="#"> <--- Ir a la pagina de Inicio</a>
 {% endblock %}
