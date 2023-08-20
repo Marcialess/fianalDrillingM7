@@ -1,3 +1,13 @@
 {% extends 'base.html' %}
 
-<h1>Hello world</h1>
+{% block content %}
+<div class="container"></div>
+<h1>Eliminar Laboratorio</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <p><strong>Estas seguro que deseas eliminar: {{ lab.nombre }}</strong></p>
+    <button type="submit" btn btn - danger>Confirmar</button>
+</form>
+
+{% endblock %}

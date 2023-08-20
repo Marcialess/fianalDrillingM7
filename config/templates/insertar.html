@@ -2,28 +2,16 @@
 
 {% block content %}
 
-<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-    
-    <div class="container">
-        <h1 class="d-flex justify-content-center">INGRESA LOS DATOS DEL LABORATORIO</h1>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Ciudad</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Pais</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <input class="btn btn-primary" type="submit" value="Enviar">
-    </div>
+<div class="container">
+    <h1>Ingresar un nuevo laboratorio</h1>
+<form method="post">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <button type="submit">Enviar</button>
+</form>
+
 </div>
-    
-
-
 
 
 

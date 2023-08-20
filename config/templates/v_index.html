@@ -19,8 +19,8 @@
             <th scope="row">{{labs.nombre}}</th>
             <td>{{labs.ciudad}}</td>
             <td>{{labs.pais}}</td>
-            <td><a href="#">Actualizar</a></td>
-            <td><a href="#">Eliminar</a></td>
+            <td><a href="/update/{{labs.id}}">Actualizar</a></td>
+            <td><a href="/delete/{{labs.id}}">Eliminar</a></td>
         </tr>
     
         {% endfor %}
