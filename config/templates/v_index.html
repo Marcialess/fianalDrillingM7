@@ -1,35 +1,41 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <h1>Informacion de Laboratorios</h1>
+    <div class="container">
+        <h1 class="mt-4 text-center">Información de Laboratorios</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Ciudad</th>
-            <th scope="col">Pais</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for labs in laborat %}
-        <tr>
-            <th scope="row">{{labs.nombre}}</th>
-            <td>{{labs.ciudad}}</td>
-            <td>{{labs.pais}}</td>
-            <td><a href="/update/{{labs.id}}">Actualizar</a></td>
-            <td><a href="/delete/{{labs.id}}">Eliminar</a></td>
-        </tr>
-    
-        {% endfor %}
-        
-    </tbody>
-</table>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">País</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for labs in laborat %}
+                        <tr>
+                            <th scope="row">{{ labs.id }}</th>
+                            <td>{{ labs.nombre }}</td>
+                            <td>{{ labs.ciudad }}</td>
+                            <td>{{ labs.pais }}</td>
+                            <td><a href="/update/{{ labs.id }}">Actualizar</a></td>
+                            <td><a href="/delete/{{ labs.id }}">Eliminar</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endblock %}
+        <div class="container">
+            <footer>
+            {% block num_veces %}
+            <p>Usted ha visitado esta pagina {{ numveces }} veces</p>
+            {% endblock %}
+        </footer>
+        </div>
 
-    <div>
-        <H2>¿Informacion de los Laboratorios?</H2>
-    </div>
-    <a href="#"> <--- Ir a la pagina de Inicio</a>
-{% endblock %}
+

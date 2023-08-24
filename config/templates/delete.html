@@ -2,12 +2,13 @@
 
 {% block content %}
 <div class="container"></div>
-<h1>Eliminar Laboratorio</h1>
+<h1 class="mt-4 text-center">Eliminar Laboratorio</h1>
 
 <form method="POST">
     {% csrf_token %}
     <p><strong>Estas seguro que deseas eliminar: {{ lab.nombre }}</strong></p>
-    <button type="submit" btn btn - danger>Confirmar</button>
+    <button type="submit" class="btn btn-secondary">Confirmar</button>
 </form>
 
 {% endblock %}
+
